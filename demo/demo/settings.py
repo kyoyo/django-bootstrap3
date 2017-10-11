@@ -96,6 +96,7 @@ WSGI_APPLICATION = 'demo.wsgi.application'
 TEMPLATES = [{
     'BACKEND': 'django.template.backends.django.DjangoTemplates',
     'APP_DIRS': True,
+    #'DIRS':[os.path.join(BASE_DIR, 'mydemo','templates')],
     'OPTIONS': {
         'context_processors': [
             "django.contrib.auth.context_processors.auth",
@@ -120,6 +121,7 @@ INSTALLED_APPS = (
 
     'bootstrap3',
     'demo',
+    'mydemo',
 )
 
 # A sample logging configuration. The only tangible logging
