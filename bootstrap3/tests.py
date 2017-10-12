@@ -63,6 +63,7 @@ class TestForm(forms.Form):
     date = forms.DateField(required=False)
     datetime = forms.SplitDateTimeField(widget=AdminSplitDateTime(), required=False)
     subject = forms.CharField(
+        min_length=5,
         max_length=100,
         help_text='my_help_text',
         required=True,
@@ -70,44 +71,44 @@ class TestForm(forms.Form):
     )
     password = forms.CharField(widget=forms.PasswordInput)
     message = forms.CharField(required=False, help_text='<i>my_help_text</i>')
-    # sender = forms.EmailField(
-    #     label='Sender © unicode',
-    #     help_text='E.g., "me@example.com"')
-    # secret = forms.CharField(initial=42, widget=forms.HiddenInput)
-    # weird = forms.CharField(help_text=u"strings are now utf-8 \u03BCnico\u0394é!")
-    # cc_myself = forms.BooleanField(
-    #     required=False,
-    #     help_text='cc stands for "carbon copy." You will get a copy in your mailbox.'
-    # )
-    # select1 = forms.ChoiceField(choices=RADIO_CHOICES)
-    # select2 = forms.MultipleChoiceField(
-    #     choices=RADIO_CHOICES,
-    #     help_text='Check as many as you like.',
-    # )
-    # select3 = forms.ChoiceField(choices=MEDIA_CHOICES)
-    # select4 = forms.MultipleChoiceField(
-    #     choices=MEDIA_CHOICES,
-    #     help_text='Check as many as you like.',
-    # )
-    # category1 = forms.ChoiceField(
-    #     choices=RADIO_CHOICES, widget=forms.RadioSelect)
-    # category2 = forms.MultipleChoiceField(
-    #     choices=RADIO_CHOICES,
-    #     widget=forms.CheckboxSelectMultiple,
-    #     help_text='Check as many as you like.',
-    # )
-    # category3 = forms.ChoiceField(
-    #     widget=forms.RadioSelect, choices=MEDIA_CHOICES)
-    # category4 = forms.MultipleChoiceField(
-    #     choices=MEDIA_CHOICES,
-    #     widget=forms.CheckboxSelectMultiple,
-    #     help_text='Check as many as you like.',
-    # )
-    # number = forms.FloatField()
-    # url = forms.URLField()
-    # addon = forms.CharField(
-    #     widget=forms.TextInput(attrs={'addon_before': 'before', 'addon_after': 'after'}),
-    # )
+    sender = forms.EmailField(
+        label='Sender © unicode',
+        help_text='E.g., "me@example.com"')
+    secret = forms.CharField(initial=42, widget=forms.HiddenInput)
+    weird = forms.CharField(help_text=u"strings are now utf-8 \u03BCnico\u0394é!")
+    cc_myself = forms.BooleanField(
+        required=False,
+        help_text='cc stands for "carbon copy." You will get a copy in your mailbox.'
+    )
+    select1 = forms.ChoiceField(choices=RADIO_CHOICES)
+    select2 = forms.MultipleChoiceField(
+        choices=RADIO_CHOICES,
+        help_text='Check as many as you like.',
+    )
+    select3 = forms.ChoiceField(choices=MEDIA_CHOICES)
+    select4 = forms.MultipleChoiceField(
+        choices=MEDIA_CHOICES,
+        help_text='Check as many as you like.',
+    )
+    category1 = forms.ChoiceField(
+        choices=RADIO_CHOICES, widget=forms.RadioSelect)
+    category2 = forms.MultipleChoiceField(
+        choices=RADIO_CHOICES,
+        widget=forms.CheckboxSelectMultiple,
+        help_text='Check as many as you like.',
+    )
+    category3 = forms.ChoiceField(
+        widget=forms.RadioSelect, choices=MEDIA_CHOICES)
+    category4 = forms.MultipleChoiceField(
+        choices=MEDIA_CHOICES,
+        widget=forms.CheckboxSelectMultiple,
+        help_text='Check as many as you like.',
+    )
+    number = forms.FloatField()
+    url = forms.URLField()
+    addon = forms.CharField(
+        widget=forms.TextInput(attrs={'addon_before': 'before', 'addon_after': 'after'}),
+    )
 
     # TODO: Re-enable this after Django 1.11 #28105 is available
     # polygon = gisforms.PointField()
